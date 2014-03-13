@@ -3,7 +3,6 @@
 #Fermat Primality Test
 
 #Fermat's probabalistic primality test
-#
 
 def fermatTest( testNum, checks ):
 	successCount = 0
