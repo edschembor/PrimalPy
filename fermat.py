@@ -2,7 +2,7 @@
 #PrimalPy Package
 #Fermat Primality Test
 
-def fermatTest( testNum, checks ):
+def fermatTest( testNum, testCount ):
 	"""Determines if a number is prime using the Fermat Primality test
 	
 	Parameters
@@ -10,7 +10,7 @@ def fermatTest( testNum, checks ):
 	testNum : Integer
 	          The number that will be tested for primality
 	
-	check : Integer
+	testCount : Integer
 	        The number of times testNum will be compared with a random
 			number for primality
 			
@@ -26,9 +26,9 @@ def fermatTest( testNum, checks ):
 	"""
 	
 	successCount = 0
-	if checks <= testNum/10:
-		checks = testNum/8
-	for x in range(0, checks):
+	if testCount <= testNum/10:
+		testCount = testNum/8
+	for x in range(0, testCount):
 		a = random.randint(2, testNum-1)
 		if (a**(testNum-1))%testNum == 1:
 			successCount++;
