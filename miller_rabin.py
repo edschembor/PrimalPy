@@ -15,9 +15,9 @@ def modulo(a,b,c):
         return x % c
          
 def millerRabin(testNum, accuracy):
-        if (testNum < 2):
+        if testNum < 2:
                 return False
-        if ((testNum != 2) and (testNum%2 ==0)):
+        if testNum != 2 and testNum%2 == 0:
                 return False
          
         d = testNum-1
@@ -28,11 +28,11 @@ def millerRabin(testNum, accuracy):
                 a = random.randint(1, testNum-1)
                 temp = d
                 x = modulo(a, temp, testNum)
-                while ((temp!=testNum-1) and (x!=1) and (x!=testNum-1)):
+                while temp!=testNum-1 and x!=1 and x!=testNum-1:
                         x = (x * x) % testNum
                         temp = temp * 2
                  
-                if ((x != testNum-1) and (temp%2 == 0)):
+                if x != testNum-1 and temp%2 == 0:
                         return False
          
         return True

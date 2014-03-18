@@ -10,6 +10,6 @@ def solovay_strassen( testNum, accuracy ):
 		a = random.randint(2, testNum-1)
 		x = (a / testNum)
 		p = a**((testNum-1)/2)
-		if ((x == 0) or (p != (x%testNum))):
+		if x == 0 or p != (x%testNum):
 			return False
 	return True 
