@@ -4,20 +4,20 @@
 
 def trialDivision( testNum ):
 """Determines if a number is prime using the most basic test of trial division
-	
-	Parameters
-	==========
-	testNum : Integer
-	          The number that will be tested for primality
-			
+    
+    Parameters
+    ==========
+    testNum : Integer
+              The number that will be tested for primality
+            
     Returns
-	=======
-	boolean : Whether or not testNum is determined to be prime
-	
-	References
-	==========
-	[1] http://en.wikipedia.org/wiki/Trial_division
-	"""
+    =======
+    boolean : Whether or not testNum is determined to be prime
+    
+    References
+    ==========
+    [1] http://en.wikipedia.org/wiki/Trial_division
+    """
 
     if testNum < 2:
         return False
