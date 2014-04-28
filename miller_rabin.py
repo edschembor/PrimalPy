@@ -2,17 +2,6 @@
 #PrimalPy Package
 #Miller-Rabin Primality Test
 
-
-def modulo(a,b,c):
-        x = 1
-        y = a
-        while (b > 0):
-                if (b % 2) == 1:
-                        x = (x * y) % c
-                y = (y * y) % c
-                b = b / 2
-        return x % c
-         
 def millerRabin(testNum, testCount):
     """Determines if a number is prime using the Miller-Rabin Primality test
     
@@ -46,7 +35,7 @@ def millerRabin(testNum, testCount):
         for i in range(testCount):
                 a = random.randint(1, testNum-1)
                 temp = d
-                x = modulo(a, temp, testNum)
+                x = pow(a, temp, testNum)
                 while temp!=testNum-1 and x!=1 and x!=testNum-1:
                         x = (x * x) % testNum
                         temp = temp * 2
