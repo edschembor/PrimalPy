@@ -21,21 +21,18 @@ def pocklington_lehmer( testNum ):
     [1] http://en.wikipedia.org/wiki/Pocklington_primality_test
     """
 
-    #Generate a prime q such that q < sqrt(n) - 1 and a number a
-    q = 2
-	a = 2
+    #Generate a prime q such that q < sqrt(n) - 1
+    primeSet = [2, 3, 5, 7, 11]
+    for q in primeSet:
+        for a in range(0, 100):
+            if ( (testNum - 1)%q != 0):
+                break
 
-    if ( (testNum - 1)%q == 0):
-        return True
-    else:
-        return False
-
-    if ( (a**(testNum - 1))%testNum == 1%testNum ):
-        return True
-    else:
-        return False
+            if ( (a**(testNum - 1))%testNum != 1%testNum ):
+                break
 	
-    if (gcd(a**((testNum - 1)/q)-1, testNum) == 1):
-	    return True
-    else:
-        return False 
+            if (gcd(a**((testNum - 1)/q)-1, testNum) != 1):
+	            break
+
+            return True
+    return False 
