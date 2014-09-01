@@ -22,7 +22,9 @@ def pocklington_lehmer( testNum ):
     """
 
     #Generate a prime q such that q < sqrt(n) - 1
+	temp = math.sqrt(testNum) - 1
     primeSet = [2, 3, 5, 7, 11]
+
     for q in primeSet:
         for a in range(0, 100):
             if ( (testNum - 1)%q != 0):
