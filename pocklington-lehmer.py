@@ -3,9 +3,11 @@
 #Pocklington-Lehmer Primality Test
 
 from fractions import gcd
+from getPrimeArray.py import get_prime_array
 
 def pocklington_lehmer( testNum ):
     """Determines if a number is prime using the Pocklington-Lehmer Primality test
+    Uses pre-generated primes to increase speed of the test.
     
     Parameters
     ==========
@@ -22,11 +24,10 @@ def pocklington_lehmer( testNum ):
     """
 
     #Generate a prime q such that q < sqrt(n) - 1
-	temp = math.sqrt(testNum) - 1
-
+	high = math.sqrt(testNum) - 1
     if ( testNum <= 500000 ):
         # Use pre-generated primes
-        primeSet = [2, 3, 5, 7, 11]
+        primeSet = get_prime_array(high)
     else:
         # Generate primes
         primeSet = [2, 3, 5, 7, 11]
