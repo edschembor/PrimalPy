@@ -2,7 +2,7 @@
 #PrimalPy Package
 #Trial Division Primality Test
 
-def trialDivision( testNum ):
+def trial_division( testNum ):
 """Determines if a number is prime using the most basic test of trial division
     
     Parameters

@@ -1,8 +1,13 @@
 # Test Cases for PrimalPy
 
+#TODO: - stop mixing camelCase and this_format
+#      - move directory
+#      - better way to test not primes - ie) test 2
+
 import unittest
 from getPrimeArray.py import get_prime_array
 from pocklington_lehmer.py import pocklington_lehmer
+from trialDivision.py import trial_division
 
 class TestGetPrimeArray(unittest.TestCase):
 
@@ -19,18 +24,37 @@ class TestGetPrimeArray(unittest.TestCase):
 class TestPocklingtonLehmer(unittest.TestCase):
 
     def setUp(self):
-        #Use the pre-generated primes to test the primality tests - we test with all primes <= 200000
+        #Use the pre-generated primes to test - we test with all primes <= 200000
         self.primeSet = get_prime_array(200000)
         self.notPrimes = [4, 6, 8, 9, 10, 12, 14, 15, 16, 18, 20]
 
     def test_true(self):
+        # Makes sure the test returns true for primes
         for prime in self.primeSet:
-            # Makes sure the test returns true for primes
             assertTrue( pocklington_lehmer( prime ) )
+
+    def test_false(self):
+        # Makes sure the test returns false for non-primes
         for notPrime in self.notPrimes:
-            # Makes sure the test returns false for non-primes
             assertFalse( pocklington_lehmer( notPrime ) )
 
+class TestTrialDivision(unittest.TestCase):
+    
+	def setUp(self):
+        #Use the pre-generated primes to test - we test with all primes <= 200000
+	    #TODO: don't do this in every test
+	    self.primeSet = get_prime_array(200000)
+        self.notPrimes = [4, 6, 8, 9, 10, 12, 14, 15, 16, 18, 20]
+
+    def test_true(self):
+        # Makes sure the test returns true for primes
+		for prime in self.primeSet:
+            assertTrue( trial_division( prime ) )
+
+    def test_false(self):
+	    #Makes sure the test returns false for non-primes
+	    for notPrime in self.notPrimes:
+		    assertFalse( trial_division( prime ) )
 			
 if __name__ == '__main__':
     unittest.main()
