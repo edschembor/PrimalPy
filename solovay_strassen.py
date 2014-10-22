@@ -3,7 +3,7 @@
 #Solovay-Strassen Primality Test
 
 def solovay_strassen( testNum, testCount ):
-"""Determines if a number is prime using the Miller-Rabin Primality test
+    """Determines if a number is prime using the Miller-Rabin Primality test
     
     Parameters
     ==========

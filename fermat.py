@@ -31,7 +31,7 @@ def fermatTest( testNum, testCount ):
     for x in range(0, testCount):
         a = random.randint(2, testNum-1)
         if (a**(testNum-1))%testNum == 1:
-            successCount++;
+            successCount+=1
         else:
             return False
     return successCount

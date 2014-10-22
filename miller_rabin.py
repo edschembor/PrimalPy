@@ -23,24 +23,24 @@ def millerRabin(testNum, testCount):
     [1] http://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test
     """
 
-        if testNum < 2:
-                return False
-        if testNum != 2 and testNum%2 == 0:
-                return False
+    if testNum < 2:
+            return False
+    if testNum != 2 and testNum%2 == 0:
+            return False
          
-        d = testNum-1
-        while d % 2 == 0:
-                d = d / 2
+    d = testNum-1
+    while d % 2 == 0:
+            d = d / 2
          
-        for i in range(testCount):
-                a = random.randint(1, testNum-1)
-                temp = d
-                x = pow(a, temp, testNum)
-                while temp!=testNum-1 and x!=1 and x!=testNum-1:
-                        x = (x * x) % testNum
-                        temp = temp * 2
-                 
-                if x != testNum-1 and temp%2 == 0:
-                        return False
-         
-        return True
+    for i in range(testCount):
+            a = random.randint(1, testNum-1)
+            temp = d
+            x = pow(a, temp, testNum)
+            while temp!=testNum-1 and x!=1 and x!=testNum-1:
+                    x = (x * x) % testNum
+                    temp = temp * 2
+
+            if x != testNum-1 and temp%2 == 0:
+                    return False
+
+    return True

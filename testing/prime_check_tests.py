@@ -5,9 +5,9 @@
 #      - better way to test not primes - ie) test 2
 
 import unittest
-from getPrimeArray.py import get_prime_array
-from pocklington_lehmer.py import pocklington_lehmer
-from trialDivision.py import trial_division
+from getPrimeArray import get_prime_array
+from pocklington_lehmer import pocklington_lehmer
+from trialDivision import trial_division
 
 class TestGetPrimeArray(unittest.TestCase):
 

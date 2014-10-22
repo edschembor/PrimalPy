@@ -3,7 +3,7 @@
 #Pocklington-Lehmer Primality Test
 
 from fractions import gcd
-from getPrimeArray.py import get_prime_array
+from getPrimeArray import get_prime_array
 
 def pocklington_lehmer( testNum ):
     """Determines if a number is prime using the Pocklington-Lehmer Primality test
@@ -24,7 +24,7 @@ def pocklington_lehmer( testNum ):
     """
 
     #Generate a prime q such that q < sqrt(n) - 1
-	high = math.sqrt(testNum) - 1
+    high = math.sqrt(testNum) - 1
     if ( testNum <= 500000 ):
         # Use pre-generated primes
         primeSet = get_prime_array(high)
