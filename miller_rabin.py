@@ -2,15 +2,15 @@
 #PrimalPy Package
 #Miller-Rabin Primality Test
 
-def millerRabin(testNum, testCount):
+def miller_rabin(test_num, test_count):
     """Determines if a number is prime using the Miller-Rabin Primality test
     
     Parameters
     ==========
-    testNum : Integer
+    test_num : Integer
               The number that will be tested for primality
     
-    testCount : Integer
+    test_count : Integer
             The number of times testNum will be compared with a random
             number for primality
             
@@ -23,24 +23,24 @@ def millerRabin(testNum, testCount):
     [1] http://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test
     """
 
-    if testNum < 2:
+    if test_num < 2:
             return False
-    if testNum != 2 and testNum%2 == 0:
+    if test_num != 2 and test_num%2 == 0:
             return False
          
-    d = testNum-1
+    d = test_num-1
     while d % 2 == 0:
             d = d / 2
          
-    for i in range(testCount):
-            a = random.randint(1, testNum-1)
+    for i in range(test_count):
+            a = random.randint(1, test_num-1)
             temp = d
-            x = pow(a, temp, testNum)
-            while temp!=testNum-1 and x!=1 and x!=testNum-1:
-                    x = (x * x) % testNum
+            x = pow(a, temp, test_num)
+            while temp!=test_num-1 and x!=1 and x!=test_num-1:
+                    x = (x * x) % test_num
                     temp = temp * 2
 
-            if x != testNum-1 and temp%2 == 0:
+            if x != test_num-1 and temp%2 == 0:
                     return False
 
     return True

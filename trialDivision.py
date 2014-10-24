@@ -2,12 +2,12 @@
 #PrimalPy Package
 #Trial Division Primality Test
 
-def trial_division( testNum ):
+def trial_division( test_num ):
    """Determines if a number is prime using the most basic test of trial division
     
     Parameters
     ==========
-    testNum : Integer
+    test_num : Integer
     The number that will be tested for primality
             
     Returns
@@ -19,16 +19,16 @@ def trial_division( testNum ):
     [1] http://en.wikipedia.org/wiki/Trial_division
    """
 
-    if testNum < 2:
+    if test_num < 2:
         return False
-    if testNum in (2, 3):
+    if test_num in (2, 3):
         return True
-    if testNum % 2 == 0 or testNum % 3 == 0:
+    if test_num % 2 == 0 or test_num % 3 == 0:
         return False
-    max_divisor = int(testNum ** 0.5) 
+    max_divisor = int(test_num ** 0.5) 
     divisor = 5
     while divisor <= max_divisor:
-        if testNum % divisor == 0 or testNum % (divisor + 2) == 0:
+        if test_num % divisor == 0 or test_num % (divisor + 2) == 0:
             return False
         divisor += 6
     return True
