@@ -2,8 +2,9 @@
 #PrimalPy Package
 #Pocklington-Lehmer Primality Test
 
+import math
 from fractions import gcd
-from getPrimeArray import get_prime_array
+from get_prime_array import get_prime_array
 
 def pocklington_lehmer( test_num ):
     """Determines if a number is prime using the Pocklington-Lehmer Primality test
@@ -36,12 +37,9 @@ def pocklington_lehmer( test_num ):
         for a in range(0, 100):
             if ( (test_num - 1)%q != 0):
                 break
-
             if ( (a**(test_num - 1))%test_num != 1%test_num ):
                 break
-	
             if (gcd(a**((test_num - 1)/q)-1, test_num) != 1):
 	            break
-
             return True
     return False 

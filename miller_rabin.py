@@ -2,6 +2,8 @@
 #PrimalPy Package
 #Miller-Rabin Primality Test
 
+import random
+
 def miller_rabin(test_num, test_count):
     """Determines if a number is prime using the Miller-Rabin Primality test
     

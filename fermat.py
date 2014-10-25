@@ -2,6 +2,8 @@
 #PrimalPy Package
 #Fermat Primality Test
 
+import random
+
 def fermatTest( test_num, test_count ):
     """Determines if a number is prime using the Fermat Primality test
     
@@ -31,7 +33,7 @@ def fermatTest( test_num, test_count ):
     for x in range(0, test_count):
         a = random.randint(2, test_num-1)
         if (a**(test_num-1))%test_num == 1:
-            success_count+=1
+            success_count += 1
         else:
             return False
-    return success_cunt
+    return success_count

@@ -1,0 +1,11 @@
+Developer TODO:
+==============
+
+High Priority
+=============
+- Fix get_prime_array
+
+Other
+=====
+- Speed up fermat_test (Testing primes > 200000 takes > 70s)
+
