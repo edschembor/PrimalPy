@@ -21,7 +21,7 @@ def get_prime_array( high ):
     with open("./pre_generated_primes/primes-to-100k.txt") as f:
         for line in f:
             hundred = [int(i) for i in line.split()]
-    primes.extend(hundred)
+            primes.extend(hundred)
 
     if ( high > 100000 ):
         with open("./pre_generated_primes/primes-to-200k.txt") as f2:
@@ -47,7 +47,7 @@ def get_prime_array( high ):
                 five_hundred = [int(i) for i in line.split()]
                 primes.extend(five_hundred)
 
-    for x in reversed(range(0, len(primes)-1)):
+    for x in reversed(range(0, len(primes))):
         if primes[x] > high:
             primes.pop(x)
         else:

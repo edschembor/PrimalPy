@@ -2,6 +2,8 @@
 #PrimalPy Package
 #Solovay-Strassen Primality Test
 
+import random
+
 def solovay_strassen( test_num, test_count ):
     """Determines if a number is prime using the Miller-Rabin Primality test
     

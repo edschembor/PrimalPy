@@ -4,7 +4,7 @@
 
 import random
 
-def fermatTest( test_num, test_count ):
+def fermat_test( test_num, test_count ):
     """Determines if a number is prime using the Fermat Primality test
     
     Parameters

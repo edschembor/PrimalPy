@@ -3,9 +3,11 @@ Developer TODO:
 
 High Priority
 =============
-- Fix get_prime_array
+- Fix solovay_strassen
+- Fix pocklington_lehmer
 
 Other
 =====
 - Speed up fermat_test (Testing primes > 200000 takes > 70s)
+- Benchmarking for comparing efficiency of new methods
 
