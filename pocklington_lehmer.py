@@ -24,22 +24,21 @@ def pocklington_lehmer( test_num ):
     [1] http://en.wikipedia.org/wiki/Pocklington_primality_test
     """
 
-    #Generate a prime q such that q < sqrt(n) - 1
-    high = math.sqrt(test_num) - 1
     if ( test_num <= 500000 ):
         # Use pre-generated primes
-        prime_set = get_prime_array(high)
-    else:
-        # Generate primes
-        prime_set = [2, 3, 5, 7, 11]
+        prime_set = get_prime_array(test_num)
+        print prime_set
 
     for q in prime_set:
-        for a in range(0, 100):
-            if ( (test_num - 1)%q != 0):
+        for a in range(0, 500000):
+            if ( (test_num - 1)%q != 0 ):
+                print "111"
                 break
-            if ( (a**(test_num - 1))%test_num != 1%test_num ):
+            if ( (a**(test_num - 1)) != 1 % test_num ):
+                print "222"
                 break
             if (gcd(a**((test_num - 1)/q)-1, test_num) != 1):
-	            break
+                print "333"
+                break
             return True
     return False 

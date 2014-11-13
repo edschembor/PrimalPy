@@ -4,6 +4,39 @@
 
 import random
 
+def legendre(a, p):
+    """Determins the Legendre symbol of a and p
+    
+    Parameters
+    ==========
+    a : A quadratic residue modulo p if it is congruent to a perfect
+        square modulo p, else it is a quadratic nonresidue modulo p
+    
+    p : An odd prime number
+
+    Returns
+    =======
+    int : The Legendre Symbol of the two inputs
+
+    References
+    ==========
+    [1] http://en.wikipedia.org/wiki/Legendre_symbol
+    """
+    
+    if( p < 2 ):
+        raise InputError('p must be greater than 2')
+    if( a == 0 ) or (a == 1 ):
+        return a
+    if( a % 2 == 0 ):
+        re = legendre(a / 2, p)
+        if( p * p - 1 & 8 != 0 ):
+            re *= -1
+    else:
+        re = legendre(p % a, a)
+        if( (a - 1) * (p - 1) & 4 != 0 ):
+            re *= -1
+    return re
+
 def solovay_strassen( test_num, test_count ):
     """Determines if a number is prime using the Miller-Rabin Primality test
     
@@ -27,7 +60,7 @@ def solovay_strassen( test_num, test_count ):
     
     for int in range(0, test_count):
         a = random.randint(2, test_num-1)
-        x = (a / test_num)
+        x = legendre(a, test_num)
         p = a**((test_num-1)/2)
         if x == 0 or p != (x%test_num):
             return False
