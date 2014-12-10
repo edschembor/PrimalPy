@@ -34,7 +34,7 @@ def pocklington_lehmer( test_num ):
             if ( (test_num - 1)%q != 0 ):
                 print "111"
                 break
-            if ( (a**(test_num - 1)) != 1 % test_num ):
+            if ( (a**(test_num - 1)) % test_num != 1 % test_num ):
                 print "222"
                 break
             if (gcd(a**((test_num - 1)/q)-1, test_num) != 1):

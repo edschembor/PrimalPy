@@ -58,10 +58,13 @@ def solovay_strassen( test_num, test_count ):
     [1] http://en.wikipedia.org/wiki/Solovay%E2%80%93Strassen_primality_test
     """
     
+    if(test_num == 2 or test_num == 3):
+        return True
+
     for int in range(0, test_count):
-        a = random.randint(2, test_num-1)
+        a = random.randrange(2, test_num-1)
         x = legendre(a, test_num)
-        p = a**((test_num-1)/2)
+        p = pow(a, (test_num-1) / 2, test_num)
         if x == 0 or p != (x%test_num):
             return False
     return True 
