@@ -17,8 +17,8 @@ def trial_division( test_num ):
     References
     ==========
     [1] http://en.wikipedia.org/wiki/Trial_division
-   """
-
+    """
+    
     if test_num < 2:
         return False
     if test_num in (2, 3):

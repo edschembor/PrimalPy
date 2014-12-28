@@ -4,8 +4,14 @@ Developer TODO:
 High Priority
 =============
 - Fix pocklington_lehmer
+- Test the unit tests
+- Unit tests for all
+- Format all primality tests
 
 Other
 =====
 - Speed up fermat_test (Testing primes > 200000 takes > 70s)
+- Speed up pocklington_lehmer (Really slow now)
 - Benchmarking for comparing efficiency of new methods
+	-Benchmark in unit tests
+- Begin work on prime generation

@@ -24,21 +24,17 @@ def pocklington_lehmer( test_num ):
     [1] http://en.wikipedia.org/wiki/Pocklington_primality_test
     """
 
+    if( test_num == 1):
+        return True
+
     if ( test_num <= 500000 ):
         # Use pre-generated primes
         prime_set = get_prime_array(test_num)
-        print prime_set
 
     for q in prime_set:
-        for a in range(0, 500000):
-            if ( (test_num - 1)%q != 0 ):
-                print "111"
-                break
-            if ( (a**(test_num - 1)) % test_num != 1 % test_num ):
-                print "222"
-                break
-            if (gcd(a**((test_num - 1)/q)-1, test_num) != 1):
-                print "333"
-                break
-            return True
+        for a in range(0, test_num):
+            if ( (test_num - 1)%q == 0 ):
+                if ( ((a**(test_num - 1)) % test_num) == 1 ):
+                    if (gcd(a**((test_num - 1)/q)-1, test_num) == 1):
+                        return True
     return False 
