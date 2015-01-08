@@ -3,7 +3,7 @@
 #Trial Division Primality Test
 
 def trial_division( test_num ):
-   """Determines if a number is prime using the most basic test of trial division
+    """Determines if a number is prime using the most basic test of trial division
     
     Parameters
     ==========
@@ -18,7 +18,7 @@ def trial_division( test_num ):
     ==========
     [1] http://en.wikipedia.org/wiki/Trial_division
     """
-    
+
     if test_num < 2:
         return False
     if test_num in (2, 3):
