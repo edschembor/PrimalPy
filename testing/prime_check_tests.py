@@ -1,9 +1,5 @@
 # Test Cases for PrimalPy
 
-#TODO: - stop mixing camelCase and this_format
-#      - move directory
-#      - better way to test not primes - ie) test 2
-
 import unittest
 import sys
 sys.path.insert(0, '../')
@@ -11,6 +7,8 @@ sys.path.insert(0, '../')
 from get_prime_array import get_prime_array
 from pocklington_lehmer import pocklington_lehmer
 from trial_division import trial_division
+
+sys.pa
 
 class TestGetPrimeArray(unittest.TestCase):
 
