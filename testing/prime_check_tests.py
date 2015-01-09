@@ -4,11 +4,11 @@ import unittest
 import sys
 sys.path.insert(0, '../')
 
+
 from get_prime_array import get_prime_array
 from pocklington_lehmer import pocklington_lehmer
 from trial_division import trial_division
 
-sys.pa
 
 class TestGetPrimeArray(unittest.TestCase):
 
@@ -18,7 +18,7 @@ class TestGetPrimeArray(unittest.TestCase):
     
     def test_correct(self):
         #Make sure general properties are correct
-        self.assertEqual( len(self.prime_set), 22044 ) #Correct number from WolframAlpha
+        self.assertEqual( len(self.prime_set), 22044 )
         self.assertEqual( self.prime_set[22043], 249989 )
         self.assertEqual( self.prime_set[0], 2 )
 
@@ -33,12 +33,12 @@ class TestTrialDivision(unittest.TestCase):
     def test_true(self):
         # Makes sure the test returns true for primes
         for prime in self.prime_set:
-            assertTrue( trial_division( prime ) )
+            self.assertTrue( trial_division( prime ) )
 
     def test_false(self):
         #Makes sure the test returns false for non-primes
         for notPrime in self.not_primes:
-            assertFalse( trial_division( prime ) )
+            self.assertFalse( trial_division( notPrime ) )
 
 if __name__ == '__main__':
     unittest.main()

@@ -3,6 +3,7 @@ Developer TODO:
 
 High Priority
 =============
+- *** Fix unit testing directory issue ***
 - Fix pocklington_lehmer
 - Test the unit tests
 - Unit tests for all

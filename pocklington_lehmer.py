@@ -24,9 +24,6 @@ def pocklington_lehmer( test_num ):
     [1] http://en.wikipedia.org/wiki/Pocklington_primality_test
     """
 
-    if( test_num == 1):
-        return True
-
     if ( test_num <= 500000 ):
         # Use pre-generated primes
         prime_set = get_prime_array(test_num)
