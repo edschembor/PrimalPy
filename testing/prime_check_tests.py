@@ -6,8 +6,9 @@ sys.path.insert(0, '../')
 
 
 from get_prime_array import get_prime_array
-from pocklington_lehmer import pocklington_lehmer
 from trial_division import trial_division
+from miller_rabin import miller_rabin
+from pocklington_lehmer import pocklington_lehmer
 
 
 class TestGetPrimeArray(unittest.TestCase):
@@ -39,6 +40,24 @@ class TestTrialDivision(unittest.TestCase):
         #Makes sure the test returns false for non-primes
         for notPrime in self.not_primes:
             self.assertFalse( trial_division( notPrime ) )
+
+class TestMillerRabin(unittest.TestCase):
+    
+    def setUp(self):
+        #Use the pre-generated primes to test - we test with all primes <= 200000
+        #TODO: don't do this in every test
+        self.prime_set = get_prime_array(5000)
+        self.not_primes = [4, 6, 8, 9, 10, 12, 14, 15, 16, 18, 20]
+
+    def test_true(self):
+        # Makes sure the test returns true for primes
+        for prime in self.prime_set:
+            self.assertTrue( miller_rabin( prime, prime) )
+
+    def test_false(self):
+        #Makes sure the test returns false for non-primes
+        for notPrime in self.not_primes:
+            self.assertFalse( miller_rabin( notPrime, notPrime) )
 
 if __name__ == '__main__':
     unittest.main()
