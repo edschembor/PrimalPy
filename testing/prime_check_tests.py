@@ -9,6 +9,7 @@ from get_prime_array import get_prime_array
 from trial_division import trial_division
 from miller_rabin import miller_rabin
 from solovay_strassen import solovay_strassen
+from fermat import fermat_test
 from pocklington_lehmer import pocklington_lehmer
 
 
@@ -77,6 +78,24 @@ class TestSolovayStrassen(unittest.TestCase):
         #Makes sure the test returns false for non-primes
         for notPrime in self.not_primes:
             self.assertFalse( solovay_strassen( notPrime, notPrime) )
+			
+class TestFermat(unittest.TestCase):
+    
+    def setUp(self):
+        #Use the pre-generated primes to test - we test with all primes <= 200000
+        #TODO: don't do this in every test
+        self.prime_set = get_prime_array(50)
+        self.not_primes = [4, 6, 8, 9, 10, 12, 14, 15, 16, 18, 20]
+
+    def test_true(self):
+        # Makes sure the test returns true for primes
+        for prime in self.prime_set:
+            self.assertTrue( fermat_test( prime, prime) )
+
+    def test_false(self):
+        #Makes sure the test returns false for non-primes
+        for notPrime in self.not_primes:
+            self.assertFalse( fermat_test( notPrime, notPrime) )
 
 if __name__ == '__main__':
     unittest.main()

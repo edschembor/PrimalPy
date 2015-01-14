@@ -26,7 +26,9 @@ def fermat_test( test_num, test_count ):
     [1] http://en.wikipedia.org/wiki/Fermat_primality_test
     [2] http://en.wikipedia.org/wiki/Fermat%27s_little_theorem
     """
-    
+    if(test_num == 2):
+        return True
+	
     success_count = 0
     if test_count <= test_num/10:
         test_count = test_num/8
@@ -36,4 +38,5 @@ def fermat_test( test_num, test_count ):
             success_count += 1
         else:
             return False
-    return success_count
+    if(success_count == test_count):
+        return True
